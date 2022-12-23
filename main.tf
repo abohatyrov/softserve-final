@@ -15,7 +15,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script = file("data/startup.sh")
+  metadata_startup_script = file("scripts/startup")
 
   network_interface {
     network = "default"
