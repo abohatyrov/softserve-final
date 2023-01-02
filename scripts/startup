@@ -1,6 +1,0 @@
-#!/bin/bash
-
-sudo apt-get update && sudo apt -y install apache2 git
-
-sudo rm -rf /var/www/*
-sudo git clone https://github.com/pranavraj1720/Responsive-Landing-Page-Website.git /var/www/html/

@@ -3,9 +3,18 @@ variable "project_id" {
 }
 
 variable "region" {
-    default = "us-west1"
+    default = "europe-west1"
 }
 
 variable "zone" {
-    default = "us-west1-a"
+    default = "europe-west1-b"
 }
+
+variable "network" {
+    default = "petclinic-vpc"
+}
+
+variable "subnetwork" {
+    default = "petclinic-eu-west1"
+}
+
