@@ -5,7 +5,7 @@ Final project for SoftServe DevOps Crash Course 2022
 #### Prerequisites
 You need to create *debian-instance-1* in GCP and install on it Spring Petclinic project.\
 
-sudo apt update && apt install -y wget git
+  sudo apt update && apt install -y wget git
 
 If debian version 11+.
 `sudo apt install -y openjdk-17-jdk`\n
