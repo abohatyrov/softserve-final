@@ -3,11 +3,11 @@ Final project for SoftServe DevOps Crash Course 2022
 
 ### How to install
 #### Prerequisites
-You need to create *debian-instance-1* in GCP and install on it Spring Petclinic project
-`sudo apt update && apt install -y wget git`\n
-If debian version 11+ \n
+You need to create *debian-instance-1* in GCP and install on it Spring Petclinic project.
+`sudo apt update && apt install -y wget git`
+If debian version 11+.
 `sudo apt install -y openjdk-17-jdk`\n
-If debian 10\n
+If debian 10.
 `
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 sudo apt install -y ./jdk-17_linux-x64_bin.deb
@@ -17,7 +17,7 @@ export PATH=\$PATH:\$JAVA_HOME/bin
 EOF
 source /etc/profile.d/jdk.sh
 `
-Next, clone the repo and build project using Maven\n
+Next, clone the repo and build project using Maven.
 `
 cd spring-petclinic/
 ./mvnw package -Dcheckstyle.skip
