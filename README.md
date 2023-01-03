@@ -30,7 +30,7 @@ cd spring-petclinic/
 ./mvnw package -Dcheckstyle.skip
 ```
 Then shutdown the machine and create an image from it, for example *petclinic-image-v1*\
-And finaly, you need to create Cloud Storage Bucket for backuping you ***.tfstate*** file.\
+And finaly, you need to create Cloud Storage Bucket for backuping you ***.tfstate*** file.
 
 If you don\`t need this function, just delete this:
   ```
