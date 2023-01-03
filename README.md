@@ -1,7 +1,7 @@
 # SoftServe final project
 Final project for SoftServe DevOps Crash Course 2022.
 In this project I have created a simple infrastructure on Google Cloud Platform using terraform.\
-What infrastructure is deployed:\
+What infrastructure is deployed:
 - VPC network and subnetwork, NAT router
 - Instance template 
 - Instance manage group
