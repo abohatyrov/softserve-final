@@ -24,7 +24,7 @@ export PATH=\$PATH:\$JAVA_HOME/bin
 EOF
 source /etc/profile.d/jdk.sh
 ```
-Next, clone the repo and build project using Maven.\
+Next, clone the repo and build project using Maven.
 ```
 cd spring-petclinic/
 ./mvnw package -Dcheckstyle.skip
@@ -45,12 +45,12 @@ If you don\`t need this function, just delete this:
 You can use this page to do that: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 
 #### Deploying an infrastracture
-Firstly, initialize the infrastructure\
+Firstly, initialize the infrastructure
 ```
 $ terraform init
 ```
 *Optionaly, you can check what scripts will do by using `terraform plan`*\
-Then, you need to deploy it\
+Then, you need to deploy it
 ```
 $ terraform apply
 ```
