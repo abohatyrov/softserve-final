@@ -39,12 +39,12 @@ If you don\`t need this function, just delete this:
 You can use this page to do that: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 
 #### Deploying an infrastracture
-Firstly, initialize the infrastructure
+Firstly, initialize the infrastructure\
 ```$ terraform init```
 *Optionaly, you can check what scripts will do by using `terraform plan`*\
-Then, you need to deploy it
+Then, you need to deploy it\
 ```$ terraform apply```
-and type `yes` to confirm an action.
+and type `yes` to confirm an action.\
 Wait a few minutes for terraform to deploy an infrastrucutre and that\`s all.\
 In *Outputs:* you can find the IP address on which load balancer is working. (something like this: `IPAddr = <YOUR IP>`)
 
