@@ -97,17 +97,6 @@ resource "google_compute_backend_service" "default" {
   }
 }
 
-# resource "google_storage_bucket" "default" {
-#   name          = "petclinic-bucket-tfstate"
-#   force_destroy = false
-#   location      = "EU"
-#   storage_class = "STANDARD"
-#   versioning {
-#     enabled = true
-#   }
-# }
-
-
 # resource "google_compute_instance" "default" {
 #   name         = "debian-instance-1"
 #   machine_type = "e2-medium"
