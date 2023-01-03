@@ -2,4 +2,4 @@
 
 source /etc/profile.d/jdk.sh
 
-java -jar /root/spring-petclinic/target/spring-petclinic-3.0.0-SNAPSHOT.jar
+java -jar /root/spring-petclinic/target/petclinic-bohatyrov-3.0.0.jar

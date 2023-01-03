@@ -7,6 +7,11 @@ terraform {
       version = "~> 3.83.0"
     }
   }
+
+  backend "gcs" {
+    bucket  = "petclinic-bucket-tfstate"
+    prefix  = "terraform/state"
+  }
 }
 
 provider "google" {
