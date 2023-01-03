@@ -14,7 +14,7 @@ You need to create *debian-instance-1* in GCP and install on it Spring Petclinic
 sudo apt update && apt install -y wget git
 ```
 If debian version 11+ just do `sudo apt install -y openjdk-17-jdk`\
-Else if debian 10\
+Else if debian 10
 ```
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 sudo apt install -y ./jdk-17_linux-x64_bin.deb
