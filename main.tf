@@ -1,46 +1,10 @@
-resource "google_compute_instance" "default" {
-  provider     = google-beta
-  name         = "debian-instance-1"
-  machine_type = "e2-medium"
-  tags         = ["http", "ssh",]
-
-  boot_disk {
-    initialize_params {
-      image = "debian-cloud/debian-10"
-    }
-  }
-
-  metadata_startup_script = file("scripts/debian-startup.sh")
-
-  network_interface {
-    network    = google_compute_network.vpc_network.id
-    subnetwork = google_compute_subnetwork.petclinic-eu-west1.id
-    
-    access_config {
-      
-    }
-  }
-
-  service_account {
-    email  = jsondecode(file("tf_auth.json")).client_email
-    scopes = ["cloud-platform"]
-  }
-
-  desired_status = "TERMINATED"
-}
-
-resource "google_compute_image" "image" {
-  name        = "petclinic-image-v2"
-  source_disk = google_compute_instance.default.self_link
-}
-
 resource "google_compute_instance_template" "default" {
   name         = "petclinic-instance-template-v1"
   machine_type = "e2-medium"
   tags         = ["http",]
 
   disk {
-    source_image = google_compute_image.image.id
+    source_image = "petclinic-image-v1"
   }
 
   metadata_startup_script = file("scripts/startup.sh")
@@ -61,7 +25,7 @@ resource "google_compute_health_check" "autohealing" {
   check_interval_sec  = 5
   timeout_sec         = 5
   healthy_threshold   = 2
-  unhealthy_threshold = 10 
+  unhealthy_threshold = 10
 
   http_health_check {
     request_path = "/"
@@ -70,8 +34,6 @@ resource "google_compute_health_check" "autohealing" {
 }
 
 resource "google_compute_autoscaler" "default" {
-  provider = google-beta
-
   name   = "petclinic-autoscaler"
   zone   = var.zone
   target = google_compute_instance_group_manager.default.id
@@ -84,8 +46,6 @@ resource "google_compute_autoscaler" "default" {
 }
 
 resource "google_compute_instance_group_manager" "default" {
-  provider = google-beta
-
   name               = "petclinic-mig"
   zone               = var.zone
   base_instance_name = "petclinic"
@@ -93,7 +53,6 @@ resource "google_compute_instance_group_manager" "default" {
   version {
     instance_template  = google_compute_instance_template.default.id
   }
-
 
   named_port {
     name = "http"
@@ -138,3 +97,41 @@ resource "google_compute_backend_service" "default" {
   }
 }
 
+# resource "google_storage_bucket" "default" {
+#   name          = "petclinic-bucket-tfstate"
+#   force_destroy = false
+#   location      = "EU"
+#   storage_class = "STANDARD"
+#   versioning {
+#     enabled = true
+#   }
+# }
+
+
+# resource "google_compute_instance" "default" {
+#   name         = "debian-instance-1"
+#   machine_type = "e2-medium"
+#   tags         = ["http", "ssh",]
+
+#   boot_disk {
+#     initialize_params {
+#       image = "petclinic-image-v1"
+#     }
+#   }
+
+#   metadata_startup_script = file("scripts/startup.sh")
+
+#   network_interface {
+#     network    = google_compute_network.vpc_network.id
+#     subnetwork = google_compute_subnetwork.petclinic-eu-west1.id
+    
+#     access_config {
+      
+#     }
+#   }
+
+#   service_account {
+#     email  = jsondecode(file("tf_auth.json")).client_email
+#     scopes = ["cloud-platform"]
+#   }
+# }

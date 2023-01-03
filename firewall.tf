@@ -25,8 +25,7 @@ resource "google_compute_firewall" "petclinic-allow-http" {
 resource "google_compute_firewall" "petclinic-allow-health_check" {
   name          = "petclinic-allow-hc"
   network       = google_compute_network.vpc_network.id
-  target_tags   = ["allow-health-check"]
-  source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
+  source_ranges = ["130.211.0.0/22", "35.191.0.0/16", "209.85.152.0/22", "209.85.204.0/22"]
 
   allow {
     protocol = "tcp"
