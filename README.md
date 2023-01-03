@@ -3,7 +3,7 @@ Final project for SoftServe DevOps Crash Course 2022
 
 ### How to install
 #### Prerequisites
-You need to create *debian-instance-1* in GCP and install on it Spring Petclinic project.\
+You need to create *debian-instance-1* in GCP and install on it Spring Petclinic project.
 ```
 sudo apt update && apt install -y wget git
 ```
@@ -36,7 +36,7 @@ If you don\`t need this function, just delete this:
    ```
 
 #### Install terraform on your local machine
-You can use this page to do that: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli \
+You can use this page to do that: https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli 
 
 #### Deploying an infrastracture
 Firstly, initialize the infrastructure
