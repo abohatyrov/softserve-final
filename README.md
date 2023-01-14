@@ -4,6 +4,7 @@ In this project I have created a simple infrastructure on Google Cloud Platform 
 What infrastructure is deployed:
 - VPC network and subnetwork, NAT router
 - Instance template 
+- SQL Database Instance with database and user
 - Instance manage group
 - Load balancer (forwarding rule, backend, health check and autohealing)
 
@@ -35,7 +36,6 @@ And finaly, you need to create Cloud Storage Bucket for backuping you ***.tfstat
 If you don\`t need this function, just delete this:
   ```
   backend "gcs" {
-    bucket  = "petclinic-bucket-tfstate"
     bucket  = "petclinic-bucket-tfstate"
     prefix  = "terraform/state"
   }
