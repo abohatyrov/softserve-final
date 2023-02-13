@@ -1,4 +1,4 @@
-# Itfrastructure as Code project
+# Infrastructure as Code project
 In this project I have created a simple infrastructure on Google Cloud Platform using terraform.\
 What infrastructure is deployed:
 - VPC network and subnetwork, NAT router
